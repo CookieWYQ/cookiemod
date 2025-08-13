@@ -1,0 +1,14 @@
+{
+  "type": "cookiemod:portal_fluid_coagulator",
+  "input": {
+    "item": "cookiemod:portal_fluid_bucket"
+  },
+  "outputs": [
+    {
+      "item": "cookiemod:portalblock"
+    },
+    {
+      "item": "cookiemod:rick_bucket"
+    }
+  ]
+}

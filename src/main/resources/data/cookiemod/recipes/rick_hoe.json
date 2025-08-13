@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AA ",
+    " B ",
+    " B "
+  ],
+  "key": {
+    "A": {
+      "item": "cookiemod:rick_ingot"
+    },
+    "B": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "cookiemod:rick_hoe",
+    "count": 1
+  }
+}

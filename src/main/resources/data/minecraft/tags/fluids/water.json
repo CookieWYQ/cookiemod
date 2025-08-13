@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "cookiemod:portal_fluid_flowing",
+    "cookiemod:portal_fluid"
+  ]
+}

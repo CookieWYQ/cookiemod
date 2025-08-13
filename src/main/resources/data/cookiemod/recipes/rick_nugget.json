@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "1",
+  "result": {
+    "item": "cookiemod:rick_nugget",
+    "count": 9
+  },
+
+  "ingredients": [
+    {
+      "item": "cookiemod:rick_ingot"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "cookiemod:macher_angle"
+    },
+    "title": {
+      "translate": "advancement.cookiemod.get_macher_angle.title",
+      "color": "#addc2e",
+      "font": "minecraft:default",
+      "bold": true
+    },
+    "description": {
+      "translate": "advancement.cookiemod.get_macher_angle.description",
+      "color": "aqua",
+      "font": "minecraft:default"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "cookiemod:first_time_rick",
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "cookiemod:macher_angle"
+          }
+        ]
+      }
+    }
+  }
+}
