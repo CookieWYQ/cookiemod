@@ -1,0 +1,68 @@
+package com.cookiewyq.cookiemod.item.custom.sth;
+
+import com.cookiewyq.cookiemod.fluids.ModFluids;
+import com.cookiewyq.cookiemod.item.ModItemGroup;
+import com.cookiewyq.cookiemod.item.ModItems;
+import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.item.*;
+import net.minecraft.stats.Stats;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
+
+import javax.annotation.ParametersAreNonnullByDefault;
+
+
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
+public class RickBucket extends BucketItem {
+    public RickBucket() {
+        super(ModFluids.PORTAL_FLUID, new Properties()
+                .maxStackSize(16)
+                .group(ModItemGroup.COOKIE_TAB));
+    }
+
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        ItemStack itemstack = playerIn.getHeldItem(handIn);
+        BlockRayTraceResult raytraceresult = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.SOURCE_ONLY);
+        
+        if (raytraceresult.getType() == RayTraceResult.Type.MISS) {
+            return ActionResult.resultPass(itemstack);
+        } else if (raytraceresult.getType() != RayTraceResult.Type.BLOCK) {
+            return ActionResult.resultPass(itemstack);
+        } else {
+            BlockPos blockpos = raytraceresult.getPos();
+            
+            // 检查是否点击的是传送液源
+            if (worldIn.getFluidState(blockpos).getFluid() == ModFluids.PORTAL_FLUID.get() && worldIn.getFluidState(blockpos).isSource()) {
+                // 从源流体中取液体
+                worldIn.setBlockState(blockpos, Blocks.AIR.getDefaultState(), 11);
+                if (playerIn instanceof ServerPlayerEntity) {
+                    CriteriaTriggers.PLACED_BLOCK.trigger((ServerPlayerEntity)playerIn, blockpos, itemstack);
+                }
+
+                playerIn.addStat(Stats.ITEM_USED.get(this));
+                
+                // 返回传送液桶而不是瑞克桶
+                ItemStack portalFluidBucket = new ItemStack(ModItems.PORTAL_FLUID_BUCKET.get());
+                if (!playerIn.inventory.addItemStackToInventory(portalFluidBucket)) {
+                    playerIn.dropItem(portalFluidBucket, false);
+                }
+                
+                // 消耗当前桶
+                itemstack.shrink(1);
+                return ActionResult.resultSuccess(itemstack);
+            } else {
+                return ActionResult.resultFail(itemstack);
+            }
+        }
+    }
+}
