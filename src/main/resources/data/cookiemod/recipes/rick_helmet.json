@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "B B",
+    "   "
+  ],
+  "key": {
+    "B": {
+      "item": "cookiemod:rick_ingot"
+    }
+  },
+  "result": {
+    "item": "cookiemod:rick_helmet",
+    "count": 1
+  }
+}

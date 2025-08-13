@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "cookiemod:portalgun"
+    },
+    "title": {
+      "translate": "advancement.cookiemod.get_portalgun.title",
+      "color": "#fedc01",
+      "font": "minecraft:default",
+      "bold": true,
+      "underlined": true
+    },
+    "description": {
+      "translate": "advancement.cookiemod.get_portalgun.description",
+      "color": "gold",
+      "font": "minecraft:default",
+      "bold": true,
+      "underlined": true
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "cookiemod:first_time_rick",
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "cookiemod:portalgun"
+          }
+        ]
+      }
+    }
+  }
+}

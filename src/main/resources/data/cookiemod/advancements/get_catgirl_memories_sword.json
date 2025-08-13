@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "cookiemod:catgirl_memories_sword"
+    },
+    "title": {
+      "translate": "advancement.cookiemod.get_catgirl_memories_sword.title",
+      "color": "#a6f360",
+      "font": "minecraft:default",
+      "bold": true
+    },
+    "description": {
+      "translate": "advancement.cookiemod.get_catgirl_memories_sword.description",
+      "color": "#e863ad",
+      "font": "minecraft:default"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "cookiemod:first_time_rick",
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "cookiemod:catgirl_memories_sword"
+          }
+        ]
+      }
+    }
+  }
+}

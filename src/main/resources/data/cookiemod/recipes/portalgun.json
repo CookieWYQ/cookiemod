@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B ",
+    "AAA",
+    "AC "
+  ],
+  "key": {
+    "A": {
+      "item": "cookiemod:rick_ingot"
+    },
+    "B": {
+      "item": "minecraft:glass"
+    },
+    "C": {
+      "item": "cookiemod:rick_nugget"
+    }
+  },
+  "result": {
+    "item": "cookiemod:portalgun",
+    "count": 1
+  }
+}

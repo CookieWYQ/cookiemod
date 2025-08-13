@@ -1,0 +1,34 @@
+{
+  "display": {
+    "icon": {
+      "item": "cookiemod:portalblock"
+    },
+    "title": {
+      "translate": "advancement.cookiemod.get_portalblock.title",
+      "color": "#aeec2d",
+      "font": "minecraft:default",
+      "bold": true
+    },
+    "description": {
+      "translate": "advancement.cookiemod.get_portalblock.description",
+      "color": "aqua",
+      "font": "minecraft:default"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "parent": "cookiemod:get_portalgun",
+  "criteria": {
+    "requirements": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "cookiemod:portalblock"
+          }
+        ]
+      }
+    }
+  }
+}

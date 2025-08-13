@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AAA",
+    "AAA",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "cookiemod:rick_ingot"
+    }
+  },
+  "result": {
+    "item": "cookiemod:rick_bars",
+    "count": 1
+  }
+}
