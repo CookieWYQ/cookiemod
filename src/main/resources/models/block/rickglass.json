@@ -1,6 +1,0 @@
-{
-  "parent": "block/glass",
-  "textures": {
-    "all": "cookiemod:block/rickglass"
-  }
-}
