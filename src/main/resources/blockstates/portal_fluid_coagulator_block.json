@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "cookiemod:block/portal_fluid_coagulator_block"
+    }
+  }
+}

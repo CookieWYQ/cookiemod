@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cookiemod:item/real_man_shit_never_bows_his_head"
+  }
+}
